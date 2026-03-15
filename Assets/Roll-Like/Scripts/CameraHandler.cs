@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraHandler : MonoBehaviour
 {
     [SerializeField]
+    [Tooltip("Points that the camera can be positioned at.")]
     private Transform[] camPoints;
 
     private Round _roundScript;
