@@ -52,6 +52,12 @@ public class Round : MonoBehaviour
     private float _roundScore = 0;
     private float _goal;
 
+    private bool _isInRound;
+    public bool IsInRound
+    {
+        get { return _isInRound; }
+    }
+
     private void Awake()
     {
         // Grab Rigidbody component
@@ -68,6 +74,8 @@ public class Round : MonoBehaviour
      */
     public void StartRound()
     {
+        _isInRound = true;
+
         // Turn off result display
         resultsDisplay.gameObject.SetActive(false);
 
@@ -177,6 +185,7 @@ public class Round : MonoBehaviour
 
         resultsDisplay.gameObject.SetActive(true);
         Money.Instance.Delta(moneyDiff);
+        _isInRound = false;
     }
 
     /**
