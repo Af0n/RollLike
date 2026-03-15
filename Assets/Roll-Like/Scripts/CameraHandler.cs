@@ -7,15 +7,12 @@ public class CameraHandler : MonoBehaviour
     [SerializeField]
     [Tooltip("Points that the camera can be positioned at.")]
     private Transform[] camPoints;
+    [Header("Unity Set Up")]
+    [SerializeField]
+    [Tooltip("DropSnap script of the camera")]
+    private DropSnap camDropSnap;
 
-    private Round _roundScript;
     private Transform _targetPoint;
-
-    private void Awake()
-    {
-        // Populating field
-        _roundScript = GetComponent<Round>();
-    }
 
     /**
      * Shorthand function for clarity
@@ -43,6 +40,6 @@ public class CameraHandler : MonoBehaviour
 
     private void MoveCamToTarget()
     {
-        Camera.main.transform.SetPositionAndRotation(_targetPoint.position, _targetPoint.rotation);
+        camDropSnap.DoSnap(_targetPoint);
     }
 }
