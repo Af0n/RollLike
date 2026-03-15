@@ -176,6 +176,7 @@ public class Round : MonoBehaviour
         }
 
         resultsDisplay.gameObject.SetActive(true);
+        Money.Instance.Delta(moneyDiff);
     }
 
     /**
