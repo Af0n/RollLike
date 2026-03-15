@@ -40,9 +40,6 @@ public class Round : MonoBehaviour
     [SerializeField]
     [Tooltip("TMProTextMesh to display current Round Goal")]
     private TextMeshProUGUI goalDisplay;
-    [SerializeField]
-    [Tooltip("TMProTextMesh that appears when winning Round")]
-    private TextMeshProUGUI resultsDisplay;
 
     private Rigidbody _dieRB;
     private int _rollCount = 0;
@@ -75,9 +72,6 @@ public class Round : MonoBehaviour
     public void StartRound()
     {
         _isInRound = true;
-
-        // Turn off result display
-        resultsDisplay.gameObject.SetActive(false);
 
         // Initialize new round trackers
         _baseValuesRolled = new float[StartRollCount];
@@ -176,14 +170,13 @@ public class Round : MonoBehaviour
         // Win Condition
         if (moneyDiff >= 0)
         {
-            resultsDisplay.text = winMessage + moneyDiff.ToString();
+            // This happens when you win a round
         }
         else
         {
-            resultsDisplay.text = loseMessage + moneyDiff.ToString();
+            // This happens when you lose a round
         }
 
-        resultsDisplay.gameObject.SetActive(true);
         Money.Instance.Delta(moneyDiff);
         _isInRound = false;
     }
