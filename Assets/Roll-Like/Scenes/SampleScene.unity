@@ -1853,6 +1853,14 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1933414269}
+    - target: {fileID: 284539918988182360, guid: d1bc8a4db0b8c16429a467fc1ac700b4, type: 3}
+      propertyPath: MaximumThrowPower
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 284539918988182360, guid: d1bc8a4db0b8c16429a467fc1ac700b4, type: 3}
+      propertyPath: MinimumThrowPower
+      value: 600
+      objectReference: {fileID: 0}
     - target: {fileID: 845213862274586343, guid: d1bc8a4db0b8c16429a467fc1ac700b4, type: 3}
       propertyPath: displaySides.Array.size
       value: 6
